@@ -10,58 +10,46 @@ export type ClubSlug = (typeof CLUB_SLUGS)[number];
 export type Club = {
   slug: ClubSlug;
   name: `${ClubSlug} club`;
-  statement: string;
-  work: [string, string, string];
-  sitting: string;
+  href: `/clubs/${ClubSlug}`;
+  intro: [string, string];
 };
 
 export const clubs: Club[] = [
   {
     slug: "ancestry",
     name: "ancestry club",
-    statement:
+    href: "/clubs/ancestry",
+    intro: [
       "Family lines, oral history, and the records that keep them.",
-    work: [
-      "Read family papers and oral accounts.",
-      "File what we can verify.",
-      "Sit with relatives when they will talk.",
+      "Come to a sitting, or write a note of interest to the northern social club.",
     ],
-    sitting: "First Saturday, 14:00. Record table in the north room.",
   },
   {
     slug: "spiritual",
     name: "spiritual club",
-    statement:
+    href: "/clubs/spiritual",
+    intro: [
       "Practice, reading, and conversation about belief. No pulpit.",
-    work: [
-      "Sit in silence at the start of each meeting.",
-      "Read a short text.",
-      "Speak in turn, without a pulpit.",
+      "Come to a sitting, or write a note of interest to the northern social club.",
     ],
-    sitting: "Wednesday, 19:00. Silence first, then talk.",
   },
   {
     slug: "political",
     name: "political club",
-    statement:
+    href: "/clubs/political",
+    intro: [
       "Civic argument in the open. Positions on paper, not slogans.",
-    work: [
-      "Argue from a written position.",
-      "Keep minutes.",
-      "Post those minutes on the board.",
+      "Come to a sitting, or write a note of interest to the northern social club.",
     ],
-    sitting: "Second Thursday, 18:30. Minutes posted after.",
   },
   {
     slug: "education",
     name: "education club",
-    statement: "Study groups, lectures, and the work of teaching each other.",
-    work: [
-      "Pick one text per sitting.",
-      "Teach each other, not from a lectern.",
-      "Leave notes for the next group.",
+    href: "/clubs/education",
+    intro: [
+      "Study groups, lectures, and the work of teaching each other.",
+      "Come to a sitting, or write a note of interest to the northern social club.",
     ],
-    sitting: "Tuesday, 17:00. One text per sitting.",
   },
 ];
 
@@ -77,6 +65,10 @@ export function clubName(slug: ClubSlug): `${ClubSlug} club` {
   return `${slug} club`;
 }
 
-export function clubPath(slug: ClubSlug): string {
+export function clubPath(slug: ClubSlug): `/clubs/${ClubSlug}` {
   return `/clubs/${slug}`;
+}
+
+export function clubHref(club: ClubSlug | "house"): string {
+  return club === "house" ? "/" : clubPath(club);
 }

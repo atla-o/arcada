@@ -1,68 +1,147 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:not(*));
+
 :root {
-  color-scheme: only light;
+  color-scheme: light only;
   --paper: #ffffff;
-  --ink: #111111;
+  --ink: #000000;
+  --background: #ffffff;
+  --foreground: #000000;
 }
 
 @theme inline {
   --color-paper: var(--paper);
   --color-ink: var(--ink);
-  --font-serif: ui-serif, serif;
-  --font-mono: ui-monospace, monospace;
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-serif: var(--font-source-serif), "Source Serif 4", ui-serif, serif;
+  --font-display: var(--font-fraunces), "Fraunces", ui-serif, serif;
+  --font-sans: var(--font-source-sans), "Source Sans 3", ui-sans-serif, sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, monospace;
 }
 
 @media (prefers-color-scheme: dark) {
-  :root {
-    color-scheme: only light;
-    --paper: #ffffff;
-    --ink: #111111;
+  :root,
+  html,
+  body {
+    color-scheme: light only;
+    background-color: #ffffff;
+    color: #000000;
   }
 }
 
-html {
-  color-scheme: only light;
-  background: var(--paper);
-  color: var(--ink);
+@layer base {
+  html {
+    background: var(--paper);
+    color: var(--ink);
+    color-scheme: light only;
+    font-family: var(--font-serif), serif;
+    hanging-punctuation: first last;
+  }
+
+  html:has([data-home]),
+  html:has([data-fit]) {
+    height: 100dvh;
+    overflow: hidden;
+    scroll-behavior: auto;
+    overscroll-behavior: none;
+  }
+
+  html:has([data-home]) body,
+  html:has([data-fit]) body {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100dvh;
+    overflow: hidden;
+    overscroll-behavior: none;
+  }
+
+  html:has([data-home]) header > div,
+  html:has([data-fit]) header > div {
+    padding-block: 0.4rem;
+  }
+
+  html:has([data-home]) footer p,
+  html:has([data-fit]) footer p {
+    padding-block: 0.4rem;
+  }
+
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    color-scheme: light only;
+    font-variant-numeric: oldstyle-nums;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 0.22em;
+  }
+
+  a:hover {
+    opacity: 0.6;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--ink);
+    outline-offset: 2px;
+  }
+
+  input,
+  textarea,
+  select,
+  button {
+    font: inherit;
+    color: inherit;
+    background: var(--paper);
+    color-scheme: light only;
+  }
 }
 
-body {
-  background: var(--paper);
-  color: var(--ink);
-  font-family: var(--font-serif), serif;
-  font-size: 1.125rem;
-  line-height: 1.6;
+@utility site-wrap {
+  margin-inline: auto;
+  width: min(100% - 2rem, 68rem);
 }
 
-a {
-  color: inherit;
-  text-decoration-thickness: 1px;
-  text-underline-offset: 0.18em;
-}
-
-:focus-visible {
-  outline: 2px solid var(--ink);
-  outline-offset: 3px;
-}
-
-::selection {
-  background: var(--ink);
-  color: var(--paper);
-}
-
-input,
-select,
-textarea,
-button {
-  font: inherit;
-  color: inherit;
-  background: var(--paper);
+@utility kicker {
+  font-family: var(--font-sans), ui-sans-serif, sans-serif;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
 }
 
 @media print {
-  header nav,
+  html:has([data-fit]),
+  html:has([data-fit]) body,
+  html:has([data-home]),
+  html:has([data-home]) body {
+    height: auto !important;
+    overflow: visible !important;
+    position: static !important;
+    inset: auto !important;
+  }
+
+  body {
+    background: white !important;
+    color: black;
+  }
+
   .no-print {
-    display: none;
+    display: none !important;
+  }
+
+  .document-panel {
+    max-height: none !important;
+    overflow: visible !important;
+  }
+
+  a {
+    text-decoration: none;
+    color: inherit;
   }
 }

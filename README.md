@@ -7,7 +7,9 @@ Arcada is a social club. Four clubs meet in this house:
 - political club
 - education club
 
-Those are the names. This repository is the public site: club pages, papers, a membership note of interest, and the events board. Ink is black. Paper is white.
+Those are the names. Membership is show-up, help, keep the peace. Ink is black. Paper is white.
+
+This repository is the public site: a pinned home lander, club pages, papers, a membership note of interest, and the events board.
 
 ## Run locally
 
@@ -15,10 +17,25 @@ Node 20 or later.
 
 ```bash
 npm install
+cp .env.example .env.local
 npm run dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000).
+
+Set `ADMIN_PASSWORD` in `.env.local` to use `/admin/login`.
+
+## Pages
+
+- `/` — pinned lander: the four clubs as squared cards
+- `/clubs/ancestry`, `/clubs/spiritual`, `/clubs/political`, `/clubs/education`
+- `/clubs/{slug}/documents` — that club’s papers, accordion
+- `/documents` — purpose, membership, land, events, legal
+- `/events` — notice board
+- `/membership` — one-screen note of interest
+- `/admin/login`, `/admin/members` — private roll (not linked from the public chrome)
+
+The header is the arc mark, linking home. The footer is **Arcada** (Purpose) – **northern social club** (membership).
 
 ## Build
 
@@ -27,11 +44,7 @@ npm run build
 npm start
 ```
 
-`npm start` serves the production build. Set `PORT` if you need a port other than 3000.
-
 ## Docker
-
-The image is built for Cloud Run later. It listens on `8080` by default (`PORT` can override).
 
 ```bash
 docker build -t arcada-club .

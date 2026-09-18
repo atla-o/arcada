@@ -1,94 +1,102 @@
-import { type ClubSlug, clubName } from "./clubs";
-
 export type Paper = {
   slug: string;
   title: string;
-  club: ClubSlug | "house";
-  dated: string;
-  paragraphs: string[];
+  paragraphs: readonly string[];
 };
 
-export const papers: Paper[] = [
+export const foundingDocuments: Paper[] = [
   {
-    slug: "standing-orders",
-    title: "Standing orders",
-    club: "house",
-    dated: "2026-09-01",
+    slug: "purpose",
+    title: "Purpose",
     paragraphs: [
       "Arcada is a social club. Four clubs meet in this house: ancestry club, spiritual club, political club, and education club.",
       "Those are the names. We do not give them other names.",
-      "Meetings are posted on the events board. Minutes and papers stay on this site.",
-      "Membership starts with a note of interest. The house writes back.",
+      "The house holds papers, a notice board, and a membership roll. Work is public.",
     ],
   },
   {
-    slug: "membership-note",
+    slug: "membership",
     title: "Membership",
-    club: "house",
-    dated: "2026-09-01",
     paragraphs: [
+      "Membership is show-up, help, keep the peace.",
       "Send a note of interest. Name the club you mean to sit with, or the house if you are not yet sure.",
-      "We will write back with the next sitting and what to bring.",
-      "Showing up is the rest of it.",
+      "The house writes back with the next sitting.",
     ],
   },
   {
-    slug: "ancestry-club-paper",
-    title: "ancestry club paper",
-    club: "ancestry",
-    dated: "2026-09-04",
+    slug: "land",
+    title: "Land",
     paragraphs: [
-      "We work from records and from speech. A story without a source stays a story.",
-      "Family papers brought to a sitting are read, noted, and returned.",
-      "No one is owed a lineage they will not document.",
+      "The house is the meeting place.",
+      "Land, if we hold it later, is for gatherings and study. It is infrastructure for the four clubs.",
     ],
   },
   {
-    slug: "spiritual-club-paper",
-    title: "spiritual club paper",
-    club: "spiritual",
-    dated: "2026-09-04",
+    slug: "events",
+    title: "Events",
     paragraphs: [
-      "This is not a congregation. There is no pulpit and no creed of the house.",
-      "Each sitting begins in silence. Then a short text. Then speech in turn.",
-      "Belief is welcome. Performance is not.",
+      "If it is not on the notice board, it is not on.",
+      "Anyone may attend a public sitting.",
     ],
   },
   {
-    slug: "political-club-paper",
-    title: "political club paper",
-    club: "political",
-    dated: "2026-09-04",
+    slug: "legal",
+    title: "Legal",
     paragraphs: [
-      "Argument is in the open. Bring a position on paper.",
-      "Minutes are kept and posted. If you said it, it can be read later.",
-      "The club is not a party and does not endorse a ticket.",
-    ],
-  },
-  {
-    slug: "education-club-paper",
-    title: "education club paper",
-    club: "education",
-    dated: "2026-09-04",
-    paragraphs: [
-      "We teach each other. One text, one sitting.",
-      "Notes are left for the next group. That is the archive.",
-      "A lecture is allowed. A lectern is not required.",
+      "These pages are the public record: purpose, membership, land, events, and this notice.",
+      "Names and emails given on the membership form are kept for the roll and for notice of sittings. Do not submit another person’s name or email.",
     ],
   },
 ];
 
-export function papersFor(club: ClubSlug | "house"): Paper[] {
-  if (club === "house") {
-    return papers.filter((paper) => paper.club === "house");
-  }
-  return papers.filter((paper) => paper.club === club);
-}
+export const clubPapers: Record<
+  "ancestry" | "spiritual" | "political" | "education",
+  Paper[]
+> = {
+  ancestry: [
+    {
+      slug: "ancestry-club-paper",
+      title: "ancestry club paper",
+      paragraphs: [
+        "We work from records and from speech. A story without a source stays a story.",
+        "Family papers brought to a sitting are read, noted, and returned.",
+      ],
+    },
+  ],
+  spiritual: [
+    {
+      slug: "spiritual-club-paper",
+      title: "spiritual club paper",
+      paragraphs: [
+        "This is not a congregation. There is no pulpit and no creed of the house.",
+        "Each sitting begins in silence. Then a short text. Then speech in turn.",
+      ],
+    },
+  ],
+  political: [
+    {
+      slug: "political-club-paper",
+      title: "political club paper",
+      paragraphs: [
+        "Argument is in the open. Bring a position on paper.",
+        "Minutes are kept and posted. The club is not a party and does not endorse a ticket.",
+      ],
+    },
+  ],
+  education: [
+    {
+      slug: "education-club-paper",
+      title: "education club paper",
+      paragraphs: [
+        "We teach each other. One text, one sitting.",
+        "Notes are left for the next group. That is the archive.",
+      ],
+    },
+  ],
+};
 
-export function paperClubLabel(club: Paper["club"]): string {
-  return club === "house" ? "the house" : clubName(club);
-}
-
-export function getPaper(slug: string): Paper | undefined {
-  return papers.find((paper) => paper.slug === slug);
+export function papersFor(
+  club: "ancestry" | "spiritual" | "political" | "education",
+): Paper[] {
+  return clubPapers[club];
 }
