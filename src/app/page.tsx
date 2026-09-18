@@ -27,6 +27,9 @@ export default function HomePage() {
             </li>
           ))}
         </ul>
+        <p className="mt-5 text-center text-sm">
+          <Link href="/events#online-intro">online intro · Sat 3 Oct</Link>
+        </p>
       </section>
     </div>
   );

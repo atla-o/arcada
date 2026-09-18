@@ -21,6 +21,11 @@ export function NoticeBoard({ notices }: { notices: Notice[] }) {
             {notice.title}
           </h2>
           <p className="mt-1 text-sm leading-relaxed">{notice.body}</p>
+          {notice.href ? (
+            <p className="mt-2">
+              <a href={notice.href}>Get a ticket</a>
+            </p>
+          ) : null}
         </li>
       ))}
     </ol>
