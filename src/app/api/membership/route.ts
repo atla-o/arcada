@@ -1,4 +1,5 @@
 import { clubs } from "@/lib/clubs";
+import { addMember } from "@/lib/members";
 
 const allowedClubs = new Set([
   ...clubs.map((club) => club.name),
@@ -108,6 +109,13 @@ export async function POST(request: Request) {
     }
     return Response.redirect(houseUrl(request, "/membership?error=1"), 303);
   }
+
+  addMember({
+    name: note.name,
+    email: note.email,
+    club: note.club,
+    note: note.note,
+  });
 
   if (json) {
     return Response.json({
