@@ -25,6 +25,7 @@ html {
   color-scheme: only light;
   background: var(--paper);
   color: var(--ink);
+  scroll-padding-top: 5.5rem;
 }
 
 body {
@@ -60,7 +61,21 @@ button {
   background: var(--paper);
 }
 
+input:not([type="radio"]):not([type="checkbox"]),
+select,
+button {
+  min-height: 2.75rem;
+}
+
+textarea {
+  min-height: 7.5rem;
+}
+
 @media print {
+  header {
+    position: static;
+  }
+
   header nav,
   .no-print {
     display: none;

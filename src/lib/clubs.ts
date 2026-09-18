@@ -80,3 +80,7 @@ export function clubName(slug: ClubSlug): `${ClubSlug} club` {
 export function clubPath(slug: ClubSlug): string {
   return `/clubs/${slug}`;
 }
+
+export function clubHref(club: ClubSlug | "house"): string {
+  return club === "house" ? "/clubs" : clubPath(club);
+}

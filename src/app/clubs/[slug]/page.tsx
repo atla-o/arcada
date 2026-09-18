@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ClubNav } from "@/components/ClubNav";
+import { InkActions, InkLink } from "@/components/InkLink";
 import { NoticeBoard } from "@/components/NoticeBoard";
+import { PageFrame } from "@/components/PageFrame";
 import { CLUB_SLUGS, getClub, isClubSlug } from "@/lib/clubs";
 import { noticesFor } from "@/lib/events";
 
@@ -41,35 +42,34 @@ export default async function ClubPage({ params }: ClubPageProps) {
   return (
     <>
       <ClubNav current={club.slug} />
-      <div className="mx-auto max-w-5xl px-6 py-12 sm:py-16">
-        <p className="font-mono text-xs tracking-wide">club</p>
-        <h1 className="mt-3 font-serif text-5xl tracking-tight sm:text-6xl">
-          {club.name}
-        </h1>
-        <p className="mt-6 max-w-2xl text-lg leading-relaxed">{club.statement}</p>
-        <p className="mt-4 max-w-2xl text-base">{club.sitting}</p>
+      <PageFrame kicker="club" title={club.name} intro={club.statement}>
+        <div className="mt-6 max-w-xl border border-ink p-4">
+          <p className="font-mono text-xs tracking-wide">next sitting</p>
+          <p className="mt-2 text-base">{club.sitting}</p>
+        </div>
 
-        <ul className="mt-8 max-w-xl list-disc space-y-2 pl-5 text-base">
+        <h2 className="mt-10 font-serif text-2xl tracking-tight">The work</h2>
+        <ul className="mt-3 max-w-xl list-disc space-y-2 pl-5 text-base">
           {club.work.map((item) => (
             <li key={item}>{item}</li>
           ))}
         </ul>
 
-        <p className="mt-8 font-mono text-xs tracking-wide">
-          <Link href={`/clubs/${club.slug}/documents`}>documents</Link>
-          <span aria-hidden="true"> · </span>
-          <Link href="/membership">membership</Link>
-          <span aria-hidden="true"> · </span>
-          <Link href="/events">events</Link>
-        </p>
+        <InkActions>
+          <InkLink href={`/clubs/${club.slug}/documents`}>documents</InkLink>
+          <InkLink href="/membership" variant="solid">
+            write a note
+          </InkLink>
+          <InkLink href="/events">events</InkLink>
+        </InkActions>
 
-        <div className="mt-16">
+        <div className="mt-12">
           <NoticeBoard
             notices={noticesFor(club.slug)}
             heading={`${club.name} notices`}
           />
         </div>
-      </div>
+      </PageFrame>
     </>
   );
 }

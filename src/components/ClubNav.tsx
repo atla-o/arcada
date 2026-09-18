@@ -3,8 +3,21 @@ import { clubs, type ClubSlug } from "@/lib/clubs";
 
 export function ClubNav({ current }: { current?: ClubSlug }) {
   return (
-    <nav aria-label="Clubs" className="border-b border-ink">
-      <ul className="mx-auto flex max-w-5xl flex-wrap gap-x-6 gap-y-2 px-6 py-3 font-mono text-xs tracking-wide">
+    <nav aria-label="Clubs" className="border-b border-ink bg-paper">
+      <ul className="mx-auto flex max-w-5xl flex-wrap gap-1 px-4 py-1 font-mono text-sm tracking-wide sm:px-6">
+        <li>
+          <Link
+            href="/clubs"
+            className={
+              !current
+                ? "inline-flex min-h-11 items-center px-2 underline decoration-ink"
+                : "inline-flex min-h-11 items-center px-2 no-underline hover:underline"
+            }
+            aria-current={!current ? "page" : undefined}
+          >
+            all clubs
+          </Link>
+        </li>
         {clubs.map((club) => {
           const active = club.slug === current;
           return (
@@ -13,8 +26,8 @@ export function ClubNav({ current }: { current?: ClubSlug }) {
                 href={`/clubs/${club.slug}`}
                 className={
                   active
-                    ? "underline decoration-ink"
-                    : "no-underline hover:underline"
+                    ? "inline-flex min-h-11 items-center px-2 underline decoration-ink"
+                    : "inline-flex min-h-11 items-center px-2 no-underline hover:underline"
                 }
                 aria-current={active ? "page" : undefined}
               >

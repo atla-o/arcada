@@ -14,7 +14,7 @@ export function NavLinks() {
   const pathname = usePathname();
 
   return (
-    <ul className="flex flex-wrap gap-x-5 gap-y-2 font-mono text-xs tracking-wide">
+    <ul className="flex flex-wrap gap-1 font-mono text-sm tracking-wide">
       {links.map((link) => {
         const active =
           pathname === link.href || pathname.startsWith(`${link.href}/`);
@@ -24,8 +24,8 @@ export function NavLinks() {
               href={link.href}
               className={
                 active
-                  ? "underline decoration-ink"
-                  : "no-underline hover:underline"
+                  ? "inline-flex min-h-11 items-center px-2 underline decoration-ink"
+                  : "inline-flex min-h-11 items-center px-2 no-underline hover:underline"
               }
               aria-current={active ? "page" : undefined}
             >

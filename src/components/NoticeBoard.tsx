@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { clubHref } from "@/lib/clubs";
 import { formatClubDate } from "@/lib/dates";
 import { noticeClubLabel, type Notice } from "@/lib/events";
 
@@ -13,7 +14,7 @@ export function NoticeBoard({
 }) {
   return (
     <section aria-labelledby="notice-board-heading">
-      <div className="mb-6 flex items-baseline justify-between gap-4 border-b border-ink pb-3">
+      <div className="mb-4 flex items-baseline justify-between gap-4 border-b border-ink pb-3">
         {heading ? (
           <h2
             id="notice-board-heading"
@@ -27,7 +28,10 @@ export function NoticeBoard({
           </span>
         )}
         {showIndexLink ? (
-          <Link href="/events" className="font-mono text-xs tracking-wide">
+          <Link
+            href="/events"
+            className="inline-flex min-h-11 items-center font-mono text-sm tracking-wide"
+          >
             all notices
           </Link>
         ) : null}
@@ -37,11 +41,13 @@ export function NoticeBoard({
       ) : (
         <ol className="divide-y divide-ink border-y border-ink">
           {notices.map((notice) => (
-            <li key={notice.id} className="py-5">
+            <li key={notice.id} className="py-4">
               <p className="font-mono text-xs tracking-wide">
-                {formatClubDate(notice.date)}
+                <time dateTime={notice.date}>{formatClubDate(notice.date)}</time>
                 <span aria-hidden="true"> · </span>
-                {noticeClubLabel(notice.club)}
+                <Link href={clubHref(notice.club)}>
+                  {noticeClubLabel(notice.club)}
+                </Link>
               </p>
               <h3 className="mt-2 font-serif text-2xl tracking-tight">
                 {notice.title}
