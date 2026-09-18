@@ -8,7 +8,24 @@ export type Notice = {
   body: string;
 };
 
+/** Public Eventbrite listing for the Arcada social club online intro. */
+export const eventbritePublicUrl =
+  "https://www.eventbrite.com/e/arcada-social-club-online-intro-tickets-2000906407929";
+
+/** Eventbrite checkout / embed widget for iframes. */
+export const eventbriteEmbedUrl =
+  "https://www.eventbrite.com/tickets-external?eid=2000906407929&ref=etckt";
+
+export const eventbriteEventId = "2000906407929";
+
 export const notices: Notice[] = [
+  {
+    id: "arcada-social-club-online-intro",
+    date: "2026-10-03",
+    club: "house",
+    title: "Arcada social club — online intro",
+    body: "New social club under one house with four clubs: ancestry, spiritual, political, and education. Come hear what Arcada is, how the clubs work, and how to join. Sat 3 Oct 2026, 3pm Eastern, online.",
+  },
   {
     id: "family-papers-night",
     date: "2026-10-03",
