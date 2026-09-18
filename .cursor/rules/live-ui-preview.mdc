@@ -1,0 +1,12 @@
+---
+description: Every UI PR needs a live clickable preview URL
+alwaysApply: true
+---
+
+# Live UI preview
+
+Every UI PR must include a live clickable preview URL before asking for review or merge. Screenshots alone are not enough. Do not ask to merge until the preview link works.
+
+- Spin a real Next server of the PR head. Post the exact clickable URL at the top of the PR description and in a PR comment.
+- Cursor preview tunnel, ephemeral public URL, or similar is fine. A static HTML mock is last resort only.
+- Do not merge. Do not deploy to production unless a human says merge and deploy.
