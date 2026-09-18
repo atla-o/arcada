@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
+import { InkActions, InkLink } from "@/components/InkLink";
 import { NoticeBoard } from "@/components/NoticeBoard";
+import { PageFrame } from "@/components/PageFrame";
 import { notices } from "@/lib/events";
 
 export const metadata: Metadata = {
@@ -10,15 +12,19 @@ export const metadata: Metadata = {
 
 export default function EventsPage() {
   return (
-    <div className="mx-auto max-w-5xl px-6 py-12 sm:py-16">
-      <p className="font-mono text-xs tracking-wide">the house</p>
-      <h1 className="mt-3 font-serif text-5xl tracking-tight">events</h1>
-      <p className="mt-4 max-w-xl text-lg">
-        The notice board. If it is not here, it is not on.
-      </p>
-      <div className="mt-10">
+    <PageFrame
+      kicker="the house"
+      title="events"
+      intro="The notice board. If it is not here, it is not on. Club names open that club."
+    >
+      <InkActions>
+        <InkLink href="/membership" variant="solid">
+          write a note
+        </InkLink>
+      </InkActions>
+      <div className="mt-8">
         <NoticeBoard notices={notices} heading="" showIndexLink={false} />
       </div>
-    </div>
+    </PageFrame>
   );
 }
