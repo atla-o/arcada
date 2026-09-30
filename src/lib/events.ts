@@ -1,4 +1,5 @@
 import { type ClubSlug, clubName } from "./clubs";
+import { onlineIntro } from "./eventbrite";
 
 export type Notice = {
   id: string;
@@ -6,9 +7,18 @@ export type Notice = {
   club: ClubSlug | "house";
   title: string;
   body: string;
+  href?: string;
 };
 
 export const notices: Notice[] = [
+  {
+    id: onlineIntro.id,
+    date: onlineIntro.date,
+    club: "house",
+    title: onlineIntro.title,
+    body: `${onlineIntro.when}. ${onlineIntro.body}`,
+    href: onlineIntro.publicUrl,
+  },
   {
     id: "family-papers-night",
     date: "2026-10-03",
