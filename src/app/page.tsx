@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { PinViewport } from "@/components/PinViewport";
+import { SiteMarks } from "@/components/SiteMarks";
 import { clubs } from "@/lib/clubs";
 import { site } from "@/lib/site";
 
@@ -12,6 +13,9 @@ export default function HomePage() {
       <PinViewport />
       <section className="w-full max-w-3xl">
         <h1 className="sr-only">{site.name}</h1>
+        <div className="mb-2 flex justify-center">
+          <SiteMarks />
+        </div>
         <ul className="mx-auto grid w-full max-w-[16rem] grid-cols-1 gap-2 sm:max-w-xs">
           {clubs.map((club) => (
             <li key={club.slug}>

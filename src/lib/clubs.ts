@@ -3,6 +3,8 @@ export const CLUB_SLUGS = [
   "spiritual",
   "political",
   "education",
+  "media",
+  "recreation",
 ] as const;
 
 export type ClubSlug = (typeof CLUB_SLUGS)[number];
@@ -48,6 +50,24 @@ export const clubs: Club[] = [
     href: "/clubs/education",
     intro: [
       "Study groups, lectures, and the work of teaching each other.",
+      "Come to a sitting, or write a note of interest to the northern social club.",
+    ],
+  },
+  {
+    slug: "media",
+    name: "media club",
+    href: "/clubs/media",
+    intro: [
+      "Pictures, sound, and the work of making them.",
+      "Come to a sitting, or write a note of interest to the northern social club.",
+    ],
+  },
+  {
+    slug: "recreation",
+    name: "recreation club",
+    href: "/clubs/recreation",
+    intro: [
+      "Play, walks, and games in the open.",
       "Come to a sitting, or write a note of interest to the northern social club.",
     ],
   },

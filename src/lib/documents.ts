@@ -1,3 +1,5 @@
+import { type ClubSlug } from "./clubs";
+
 export type Paper = {
   slug: string;
   title: string;
@@ -9,7 +11,7 @@ export const foundingDocuments: Paper[] = [
     slug: "purpose",
     title: "Purpose",
     paragraphs: [
-      "Arcada is a social club. Four clubs meet in this house: ancestry club, spiritual club, political club, and education club.",
+      "Arcada is a social club. Clubs meet in this house: ancestry club, spiritual club, political club, education club, media club, and recreation club.",
       "Those are the names. We do not give them other names.",
       "The house holds papers, a notice board, and a membership roll. Work is public.",
     ],
@@ -28,7 +30,7 @@ export const foundingDocuments: Paper[] = [
     title: "Land",
     paragraphs: [
       "The house is the meeting place.",
-      "Land, if we hold it later, is for gatherings and study. It is infrastructure for the four clubs.",
+      "Land, if we hold it later, is for gatherings and study. It is infrastructure for the clubs.",
     ],
   },
   {
@@ -49,10 +51,7 @@ export const foundingDocuments: Paper[] = [
   },
 ];
 
-export const clubPapers: Record<
-  "ancestry" | "spiritual" | "political" | "education",
-  Paper[]
-> = {
+export const clubPapers: Record<ClubSlug, Paper[]> = {
   ancestry: [
     {
       slug: "ancestry-club-paper",
@@ -93,10 +92,28 @@ export const clubPapers: Record<
       ],
     },
   ],
+  media: [
+    {
+      slug: "media-club-paper",
+      title: "media club paper",
+      paragraphs: [
+        "We make and look. A sitting starts with a work, then speech in turn.",
+        "Copies brought to the house are noted and returned.",
+      ],
+    },
+  ],
+  recreation: [
+    {
+      slug: "recreation-club-paper",
+      title: "recreation club paper",
+      paragraphs: [
+        "Play is on the board like any other sitting.",
+        "The house keeps the time and the place. The club keeps the game.",
+      ],
+    },
+  ],
 };
 
-export function papersFor(
-  club: "ancestry" | "spiritual" | "political" | "education",
-): Paper[] {
+export function papersFor(club: ClubSlug): Paper[] {
   return clubPapers[club];
 }

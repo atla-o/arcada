@@ -52,7 +52,7 @@ export const notices: Notice[] = [
     date: "2026-10-24",
     club: "house",
     title: "All-club supper",
-    body: "The four clubs eat together. Names on the board by 17 Oct.",
+    body: "The clubs eat together. Names on the board by 17 Oct.",
   },
 ];
 

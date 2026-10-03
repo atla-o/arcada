@@ -102,7 +102,7 @@ export async function POST(request: Request) {
         {
           ok: false,
           message:
-            "Choose ancestry club, spiritual club, political club, education club, or the house.",
+            "Choose ancestry club, spiritual club, political club, education club, media club, recreation club, or the house.",
         },
         { status: 400 },
       );
