@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { PinViewport } from "@/components/PinViewport";
+import { SiteMark } from "@/components/SiteMark";
 import { clubs } from "@/lib/clubs";
 import { site } from "@/lib/site";
 
@@ -7,11 +8,23 @@ export default function HomePage() {
   return (
     <div
       data-home
-      className="flex h-full min-h-0 items-center justify-center px-4"
+      className="relative flex h-full min-h-0 items-center justify-center px-4"
     >
       <PinViewport />
+      <a
+        href="https://devoutshaman.com"
+        className="absolute top-1 left-1/2 -translate-x-1/2 font-display text-2xl leading-none text-ink no-underline hover:opacity-100 sm:text-3xl"
+        aria-label="devoutshaman.com"
+      >
+        o
+      </a>
       <section className="w-full max-w-3xl">
         <h1 className="sr-only">{site.name}</h1>
+        <div className="mb-2 flex justify-center">
+          <Link href="/" className="text-ink no-underline" aria-label={site.name}>
+            <SiteMark className="h-8 w-14 text-ink sm:h-9 sm:w-16" />
+          </Link>
+        </div>
         <ul className="mx-auto grid w-full max-w-[16rem] grid-cols-1 gap-2 sm:max-w-xs">
           {clubs.map((club) => (
             <li key={club.slug}>

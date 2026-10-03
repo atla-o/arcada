@@ -6,6 +6,8 @@ Arcada is a social club. Clubs are named only:
 - spiritual club
 - political club
 - education club
+- media club
+- recreation club
 
 Do not invent trade names for the clubs. Use those plain names in UI, routes, metadata, and copy.
 

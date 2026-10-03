@@ -45,6 +45,8 @@ export const metadata: Metadata = {
     "spiritual club",
     "political club",
     "education club",
+    "media club",
+    "recreation club",
   ],
   openGraph: {
     title: site.name,

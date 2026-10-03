@@ -58,7 +58,10 @@
     overscroll-behavior: none;
   }
 
-  html:has([data-home]) header > div,
+  html:has([data-home]) header {
+    display: none;
+  }
+
   html:has([data-fit]) header > div {
     padding-block: 0.4rem;
   }
