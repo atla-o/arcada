@@ -4,7 +4,7 @@ export const onlineIntro = {
   title: "Arcada social club online intro",
   when: "Sat Oct 3, 2026, 3pm Eastern",
   date: "2026-10-03",
-  body: "New social club with four clubs: ancestry, spiritual, political, education. Interested people welcome.",
+  body: "utopia social club. Clubs: ancestry, intellectual, leisure, political, spiritual. Interested people welcome.",
   publicUrl:
     "https://www.eventbrite.com/e/arcada-social-club-online-intro-tickets-2000906407929",
   embedUrl:

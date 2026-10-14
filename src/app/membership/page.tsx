@@ -6,7 +6,7 @@ import { PinViewport } from "@/components/PinViewport";
 export const metadata: Metadata = {
   title: "membership",
   description:
-    "Ask to sit with Arcada. Membership is show-up, help, keep the peace.",
+    "Ask to sit with utopiasocial. Membership is show-up, help, keep the peace.",
 };
 
 type MembershipPageProps = {
@@ -26,7 +26,7 @@ export default async function MembershipPage({
       <PinViewport />
       <div className="my-auto flex max-h-full min-h-0 w-full max-w-md flex-col">
         <h1 className="shrink-0 font-display text-2xl tracking-tight sm:text-3xl">
-          northern social club
+          utopia social club
         </h1>
         <p className="mt-1 mb-3 shrink-0 text-sm">
           Show-up, help, keep the peace. Read the{" "}

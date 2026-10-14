@@ -1,17 +1,18 @@
 # Agent notes
 
-Arcada is a social club. Clubs are named only:
+utopiasocial is a utopia social club. Clubs are named only:
 
 - ancestry club
-- spiritual club
+- intellectual club
+- leisure club
 - political club
-- education club
-- media club
-- recreation club
+- spiritual club
+
+Leisure includes creative work and the recreation studios. Media and education are not clubs.
 
 Do not invent trade names for the clubs. Use those plain names in UI, routes, metadata, and copy.
 
-This file is Arcada ship notes only.
+This file is utopiasocial ship notes only.
 
 ## Live UI preview
 

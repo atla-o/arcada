@@ -12,7 +12,7 @@ export default function ErrorPage({
     <div className="flex flex-1 flex-col items-center justify-center px-4 py-16 text-center">
       <h1 className="font-display text-4xl tracking-tight">A fault in the house</h1>
       <p className="mt-4 max-w-md text-base">
-        Try again, or return to <Link href="/">Arcada</Link>.
+        Try again, or return to <Link href="/">utopiasocial</Link>.
       </p>
       <button
         type="button"
