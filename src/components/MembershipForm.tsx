@@ -95,7 +95,7 @@ export function MembershipForm({
           type="submit"
           className="h-9 rounded-none border border-ink bg-ink px-6 font-sans text-sm tracking-wide text-paper hover:bg-paper hover:text-ink"
         >
-          Ask to sit with Arcada
+          Ask to sit with utopiasocial
         </button>
       </div>
     </form>

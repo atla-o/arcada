@@ -101,8 +101,7 @@ export async function POST(request: Request) {
       return Response.json(
         {
           ok: false,
-          message:
-            "Choose ancestry club, spiritual club, political club, education club, media club, recreation club, or the house.",
+          message: `Choose ${[...allowedClubs].join(", ")}.`,
         },
         { status: 400 },
       );

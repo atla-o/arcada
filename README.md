@@ -1,11 +1,14 @@
-# Arcada
+# utopiasocial
 
-Arcada is a social club. Four clubs meet in this house:
+utopiasocial is a utopia social club. Five clubs meet in this house:
 
 - ancestry club
-- spiritual club
+- intellectual club
+- leisure club
 - political club
-- education club
+- spiritual club
+
+Leisure includes creative work and the recreation studios.
 
 Those are the names. Membership is show-up, help, keep the peace. Ink is black. Paper is white.
 
@@ -27,15 +30,15 @@ Set `ADMIN_PASSWORD` in `.env.local` to use `/admin/login`.
 
 ## Pages
 
-- `/` — pinned lander: the four clubs as squared cards
-- `/clubs/ancestry`, `/clubs/spiritual`, `/clubs/political`, `/clubs/education`
+- `/` — pinned lander: the five clubs as squared cards
+- `/clubs/ancestry`, `/clubs/intellectual`, `/clubs/leisure`, `/clubs/political`, `/clubs/spiritual`
 - `/clubs/{slug}/documents` — that club’s papers, accordion
 - `/documents` — purpose, membership, land, events, legal
 - `/events` — notice board
 - `/membership` — one-screen note of interest
 - `/admin/login`, `/admin/members` — private roll (not linked from the public chrome)
 
-The header is the arc mark, linking home. The footer is **Arcada** (Purpose) – **northern social club** (membership).
+The header is the arc mark, linking home. The footer is **utopiasocial** (Purpose) – **utopia social club** (membership).
 
 ## Build
 
