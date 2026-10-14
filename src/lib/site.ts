@@ -1,6 +1,6 @@
 export const site = {
-  name: "Arcada",
-  footerLine: "northern social club",
+  name: "utopiasocial",
+  footerLine: "utopia social club",
   description:
-    "Arcada is a social club. Clubs: ancestry club, spiritual club, political club, education club, media club, and recreation club. Membership is show-up, help, keep the peace.",
+    "utopiasocial is a utopia social club. Clubs: ancestry club, intellectual club, leisure club, political club, and spiritual club. Membership is show-up, help, keep the peace.",
 } as const;
