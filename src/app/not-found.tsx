@@ -7,7 +7,7 @@ export default function NotFound() {
       <PageIntro title="No such page">
         <p>
           That leaf is not in the house. Return to{" "}
-          <Link href="/">Arcada</Link>.
+          <Link href="/">utopiasocial</Link>.
         </p>
       </PageIntro>
     </div>

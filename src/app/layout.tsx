@@ -3,6 +3,7 @@ import type { ReactNode } from "react";
 import { Fraunces, Geist_Mono, Source_Sans_3, Source_Serif_4 } from "next/font/google";
 import { SiteFooter } from "@/components/SiteFooter";
 import { SiteHeader } from "@/components/SiteHeader";
+import { clubs } from "@/lib/clubs";
 import { site } from "@/lib/site";
 import "./globals.css";
 
@@ -37,17 +38,8 @@ export const metadata: Metadata = {
   },
   description: site.description,
   applicationName: site.name,
-  authors: [{ name: "Arcada" }],
-  keywords: [
-    "Arcada",
-    "social club",
-    "ancestry club",
-    "spiritual club",
-    "political club",
-    "education club",
-    "media club",
-    "recreation club",
-  ],
+  authors: [{ name: site.name }],
+  keywords: [site.name, "utopia social club", ...clubs.map((club) => club.name)],
   openGraph: {
     title: site.name,
     description: site.description,

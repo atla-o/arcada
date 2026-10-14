@@ -44,7 +44,7 @@ export default async function ClubPage({ params }: ClubPageProps) {
           Read the{" "}
           <Link href={`/clubs/${club.slug}/documents`}>club papers</Link>, see{" "}
           <Link href="/events">events</Link>, or ask to join the{" "}
-          <Link href="/membership">northern social club</Link>.
+          <Link href="/membership">utopia social club</Link>.
         </p>
       </PageIntro>
     </div>

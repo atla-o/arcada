@@ -7,7 +7,7 @@ import { notices } from "@/lib/events";
 export const metadata: Metadata = {
   title: "documents",
   description:
-    "Purpose, membership, land, events, and legal — the public record of Arcada.",
+    "Purpose, membership, land, events, and legal — the public record of utopiasocial.",
 };
 
 export default function DocumentsPage() {

@@ -7,7 +7,7 @@ import { notices } from "@/lib/events";
 export const metadata: Metadata = {
   title: "events",
   description:
-    "Notice board for Arcada: ancestry club, spiritual club, political club, education club, media club, and recreation club.",
+    "Notice board for utopiasocial: ancestry club, intellectual club, leisure club, political club, and spiritual club.",
 };
 
 export default function EventsPage() {

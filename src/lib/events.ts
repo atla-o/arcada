@@ -43,9 +43,9 @@ export const notices: Notice[] = [
   {
     id: "study-circle-how-we-teach",
     date: "2026-10-15",
-    club: "education",
-    title: "Study circle: how we teach",
-    body: "Bring a lesson you have given. We take it apart.",
+    club: "intellectual",
+    title: "Study circle",
+    body: "Bring a text you have been reading. We take it apart.",
   },
   {
     id: "all-club-supper",

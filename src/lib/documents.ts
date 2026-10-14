@@ -11,7 +11,7 @@ export const foundingDocuments: Paper[] = [
     slug: "purpose",
     title: "Purpose",
     paragraphs: [
-      "Arcada is a social club. Clubs meet in this house: ancestry club, spiritual club, political club, education club, media club, and recreation club.",
+      "utopiasocial is a utopia social club. Clubs meet in this house: ancestry club, intellectual club, leisure club, political club, and spiritual club.",
       "Those are the names. We do not give them other names.",
       "The house holds papers, a notice board, and a membership roll. Work is public.",
     ],
@@ -82,33 +82,24 @@ export const clubPapers: Record<ClubSlug, Paper[]> = {
       ],
     },
   ],
-  education: [
+  intellectual: [
     {
-      slug: "education-club-paper",
-      title: "education club paper",
+      slug: "intellectual-club-paper",
+      title: "intellectual club paper",
       paragraphs: [
-        "We teach each other. One text, one sitting.",
+        "One text, one sitting. We read it and speak in turn.",
         "Notes are left for the next group. That is the archive.",
       ],
     },
   ],
-  media: [
+  leisure: [
     {
-      slug: "media-club-paper",
-      title: "media club paper",
+      slug: "leisure-club-paper",
+      title: "leisure club paper",
       paragraphs: [
-        "We make and look. A sitting starts with a work, then speech in turn.",
-        "Copies brought to the house are noted and returned.",
-      ],
-    },
-  ],
-  recreation: [
-    {
-      slug: "recreation-club-paper",
-      title: "recreation club paper",
-      paragraphs: [
-        "Play is on the board like any other sitting.",
-        "The house keeps the time and the place. The club keeps the game.",
+        "Leisure holds creative work and the recreation studios.",
+        "A creative sitting starts with a work, then speech in turn. Copies brought to the house are noted and returned.",
+        "The recreation studios are for play, walks, and games. The house keeps the time and the place.",
       ],
     },
   ],

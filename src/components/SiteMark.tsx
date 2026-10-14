@@ -5,7 +5,7 @@ type SiteMarkProps = {
   title?: string;
 };
 
-export function SiteMark({ className, title = "Arcada" }: SiteMarkProps) {
+export function SiteMark({ className, title = "utopiasocial" }: SiteMarkProps) {
   return (
     <svg
       viewBox="0 0 80 44"
