@@ -1,8 +1,15 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import { notFound } from "next/navigation";
-import { PageIntro } from "@/components/PageIntro";
-import { CLUB_SLUGS, getClub, isClubSlug } from "@/lib/clubs";
+import { OfferPage } from "@/components/OfferPage";
+import { CLUB_SLUGS, type ClubSlug, getClub, isClubSlug } from "@/lib/clubs";
+
+const OFFER_IMAGE: Record<ClubSlug, string> = {
+  ancestry: "https://devoutshaman.com/shared/offerings/ancestry.jpg",
+  intellectual: "https://devoutshaman.com/shared/offerings/education.jpg",
+  leisure: "https://devoutshaman.com/shared/offerings/media.jpg",
+  political: "https://devoutshaman.com/shared/offerings/political.jpg",
+  spiritual: "https://devoutshaman.com/shared/offerings/spiritual.jpg",
+};
 
 type ClubPageProps = {
   params: Promise<{ slug: string }>;
@@ -36,17 +43,5 @@ export default async function ClubPage({ params }: ClubPageProps) {
     notFound();
   }
 
-  return (
-    <div className="flex flex-1 flex-col items-center justify-center px-4 py-8 text-center">
-      <PageIntro title={club.name}>
-        <p>{club.intro[0]}</p>
-        <p>
-          Read the{" "}
-          <Link href={`/clubs/${club.slug}/documents`}>club papers</Link>, see{" "}
-          <Link href="/events">events</Link>, or ask to join the{" "}
-          <Link href="/membership">utopia social club</Link>.
-        </p>
-      </PageIntro>
-    </div>
-  );
+  return <OfferPage club={club} image={OFFER_IMAGE[club.slug]} />;
 }

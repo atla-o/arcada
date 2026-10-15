@@ -148,3 +148,111 @@
     color: inherit;
   }
 }
+
+html:has([data-offer]) header {
+  display: none;
+}
+
+html:has([data-offer]),
+html:has([data-offer]) body {
+  background: #f4f0e8;
+  color: #1a1a1a;
+}
+
+html:has([data-offer-rich="true"]),
+html:has([data-offer-rich="true"]) body {
+  background: #000;
+  color: #f5f5f7;
+}
+
+.offer {
+  position: relative;
+  display: flex;
+  min-height: 100dvh;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 1.2rem 2rem;
+  text-align: center;
+}
+
+.offer-o {
+  position: absolute;
+  z-index: 2;
+  top: 0.7rem;
+  left: 50%;
+  width: 1.7rem;
+  height: 1.7rem;
+  transform: translateX(-50%);
+  border: 0;
+  background: none;
+  color: #fff;
+  cursor: pointer;
+}
+
+.offer-o svg {
+  display: block;
+  width: 1.7rem;
+  height: 1.7rem;
+}
+
+.offer-sheet,
+.offer-card {
+  width: min(100%, 18rem);
+}
+
+.offer h1 {
+  margin: 0;
+  font-family: var(--font-sans), sans-serif;
+  font-size: 1.35rem;
+  font-weight: 600;
+  letter-spacing: -0.03em;
+}
+
+.offer p {
+  margin: 0.45rem 0 0.8rem;
+}
+
+.offer form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  text-align: left;
+}
+
+.offer label {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  font-size: 0.75rem;
+}
+
+.offer input {
+  border: 1px solid #1a1a1a;
+  background: #fff;
+  color: #000;
+  padding: 0.4rem 0.5rem;
+}
+
+.offer button[type="submit"] {
+  border: 0;
+  background: #1a1a1a;
+  color: #fff;
+  padding: 0.5rem;
+  cursor: pointer;
+}
+
+.offer-photo {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.offer-card {
+  position: relative;
+  z-index: 1;
+  padding: 0.85rem;
+  background: #fff;
+  color: #000;
+}
